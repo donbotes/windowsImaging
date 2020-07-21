@@ -1,5 +1,5 @@
 ﻿#Create temp folder
-New-Item -Path 'C:\temp' -ItemType Directory -Force | Out-ullN
+New-Item -Path 'C:\temp' -ItemType Directory -Force | Out-Null
 
 #Chrome
 write-host "Installing Chrome"
