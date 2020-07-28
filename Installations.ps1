@@ -37,7 +37,7 @@ write-host "Downloading Datadog"(Get-Date)
 Invoke-WebRequest -Uri 'https://s3.amazonaws.com/ddagent-windows-stable/datadog-agent-7-latest.amd64.msi' -OutFile 'c:\temp\datadog.msi'
 write-host "Download Done"(Get-Date)
 write-host "Installing Datadog"(Get-Date)
-Start-Process -Wait msiexec -ArgumentList '/qn /i C:\temp\datadog-agent-7-latest.amd64.msi APIKEY="4babbc7ae50aea031e3940ba574055f5"'
+Start-Process -Wait msiexec -ArgumentList '/qn /i C:\temp\datadog-agent-7-latest.amd64.msi APIKEY=""'
 write-host "Waiting the 120 seconds"(Get-Date)
 Start-Sleep -Seconds 120
 write-host "Datadog Done"(Get-Date)
