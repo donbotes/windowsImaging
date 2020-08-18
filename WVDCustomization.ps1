@@ -2,7 +2,7 @@
 New-Item -Path 'C:\temp' -ItemType Directory -Force | Out-Null
 
 Start-Transcript `
--Path 'C:\temp\powershell-installation.log' `
+-Path 'C:\temp\WVDCustomization.log' `
 -IncludeInvocationHeader
 
 #Make Windows Defender skip scanning the VHD
