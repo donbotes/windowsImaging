@@ -20,17 +20,7 @@ Start-Sleep -Seconds 120
 write-host "Chrome Done"(Get-Date)
 
 #InstallFSLogix
-write-host "Downloading FSLogix"(Get-Date)
-Invoke-WebRequest -Uri 'https://aka.ms/fslogix_download' -OutFile 'c:\temp\fslogix.zip'
-write-host "Download Done"
-write-host "Extracting FSLogix"(Get-Date)
-Expand-Archive -Path 'C:\temp\fslogix.zip' -DestinationPath 'C:\temp\fslogix\'  -Force
-write-host "Extract Done"(Get-Date)
-write-host "Installing FSLogix"(Get-Date)
-Start-Process -FilePath 'C:\temp\fslogix\x64\release\fslogixappssetup.exe' -argumentList '/S /v /qn /norestart'
-write-host "Waiting the 120 seconds"(Get-Date)
-Start-Sleep -Seconds 120
-write-host "FSLogix Done"(Get-Date)
+
 
 #Install Datadog
 write-host "Downloading Datadog"(Get-Date)
