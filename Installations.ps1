@@ -27,7 +27,7 @@ write-host "Extracting FSLogix"(Get-Date)
 Expand-Archive -Path 'C:\temp\fslogix.zip' -DestinationPath 'C:\temp\fslogix\'  -Force
 write-host "Extract Done"(Get-Date)
 write-host "Installing FSLogix"(Get-Date)
-C:\temp\fslogix\x64\Release\FSLogixAppsSetup.exe /install /quiet /norestart
+Start-Process -FilePath 'C:\temp\fslogix\x64\release\fslogixappssetup.exe' -argumentList '/S /v /qn /norestart'
 write-host "Waiting the 120 seconds"(Get-Date)
 Start-Sleep -Seconds 120
 write-host "FSLogix Done"(Get-Date)
