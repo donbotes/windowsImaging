@@ -2,7 +2,7 @@
 New-Item -Path 'C:\temp' -ItemType Directory -Force | Out-Null
 
 Start-Transcript `
--Path 'C:\temp\powershell-installation.log' `
+-Path 'C:\temp\installation.log' `
 -IncludeInvocationHeader
 
 
@@ -14,7 +14,7 @@ write-host "Extracting Chrome"(Get-Date)
 Expand-Archive -Path 'C:\temp\chrome.zip' -DestinationPath 'C:\temp\chrome\'  -Force
 write-host "Extract Done"(Get-Date)
 write-host "Installing Chrome"(Get-Date)
-Invoke-Expression -Command 'C:\temp\chrome\Installers\GoogleChromeStandaloneEnterprise64.msi /qn'
+Start-Process -Wait msiexec -ArgumentList '/qn /i C:\temp\chrome\Installers\GoogleChromeStandaloneEnterprise64.msi'
 write-host "Waiting the 120 seconds"(Get-Date)
 Start-Sleep -Seconds 120
 write-host "Chrome Done"(Get-Date)
