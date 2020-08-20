@@ -2,7 +2,7 @@
 New-Item -Path 'C:\temp' -ItemType Directory -Force | Out-Null
 
 Start-Transcript `
--Path 'C:\temp\Languages.log' `
+-Path 'C:\temp\languages.log' `
 -IncludeInvocationHeader
 
 #Installs the langauges in Basic Format
