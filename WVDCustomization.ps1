@@ -6,8 +6,8 @@ Start-Transcript `
 -IncludeInvocationHeader
 
 #Make Windows Defender skip scanning the VHD
-write-host "Windows Defender Skip Scanning .VHDX"(Get-Date)
-Add-MpPreference -ExclusionExtension ".VHDX"
+write-host "Windows Defender Skip Scanning .VHDX - skipped"(Get-Date)
+#Add-MpPreference -ExclusionExtension ".VHDX"
 
 #Disable Automatic Updates
 write-host "Disable Automatic Updates"(Get-Date)
@@ -31,8 +31,8 @@ write-host "Feedback hub collection"(Get-Date)
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /v AllowTelemetry /t REG_DWORD /d 3 /f
 
 #Fix Watson Crashes
-write-host "Fix Watson Crashes"(Get-Date)
-reg delete "HKLM\SOFTWARE\Microsoft\Windows\Windows Error Reporting" /v CorporateWerServer* /f
+write-host "Fix Watson Crashes - skipped"(Get-Date)
+#reg delete "HKLM\SOFTWARE\Microsoft\Windows\Windows Error Reporting" /v CorporateWerServer* /f
 
 #Fix 5k resolution support
 write-host "Fix 5k resolution support"(Get-Date)
