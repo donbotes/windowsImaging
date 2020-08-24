@@ -7,11 +7,11 @@ Start-Transcript `
 
 #Make Windows Defender skip scanning the VHD
 write-host "Windows Defender Skip Scanning .VHDX - skipped"(Get-Date)
-#Add-MpPreference -ExclusionExtension ".VHDX"
+Add-MpPreference -ExclusionExtension ".VHDX"
 
 #Disable Automatic Updates
-write-host "Disable Automatic Updates"(Get-Date)
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" /v NoAutoUpdate /t REG_DWORD /d 1 /f
+write-host "Disable Automatic Updates skipped"(Get-Date)
+#reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" /v NoAutoUpdate /t REG_DWORD /d 1 /f
 
 #Specify Start layout for Windows 10 PCs
 write-host "Specify Start Layout"(Get-Date)
