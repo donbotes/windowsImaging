@@ -8,14 +8,13 @@ Start-Transcript `
 
 #Optimizations
 write-host "Downloading Optimizations"(Get-Date)
-Invoke-WebRequest -Uri 'https://github.com/donbotes/windowsImaging/raw/master/Optimizations.zip' -OutFile 'c:\temp\Optimizations.zip'
+Invoke-WebRequest -Uri 'https://github.com/donbotes/windowsImaging/raw/master/Opt.zip' -OutFile 'c:\temp\Opt.zip'
 write-host "Download Done"(Get-Date)
 write-host "Extracting Optimizations"(Get-Date)
-Expand-Archive -Path 'C:\temp\Optimizations.zip' -DestinationPath 'C:\temp\' -Force
+Expand-Archive -Path 'C:\temp\Opt.zip' -DestinationPath 'C:\temp\' -Force
 write-host "Extract Done"(Get-Date)
 Set-ExecutionPolicy RemoteSigned -Force
 write-host "Optimizing..."(Get-Date)
-Invoke-Expression -Command 'C:\temp\Optimizations\Virtual-Desktop-Optimization-Tool-master\Win10_VirtualDesktop_Optimize.ps1' 
+Invoke-Expression -Command 'C:\temp\Opt\Win10_WVD_Optimize.ps1' 
 Set-ExecutionPolicy Restricted -Force
 Stop-Transcript
-
