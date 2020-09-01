@@ -5,14 +5,14 @@ Start-Transcript `
 -Path 'C:\temp\teams.log' `
 -IncludeInvocationHeader
 
-#Install Teams
-write-host "Downloading Datadog"(Get-Date)
-Invoke-WebRequest -Uri 'https://statics.teams.cdn.office.net/production-windows-x64/1.3.00.21759/Teams_windows_x64.msi' -OutFile 'c:\temp\teams.msi'
+#Install Teams Machine Mode
+New-Item -Path 'HKLM:\SOFTWARE\Citrix\PortICA' -Force | Out-Null
+write-host "Downloading Teams"(Get-Date)
+Invoke-WebRequest -Uri 'https://teams.microsoft.com/downloads/desktopurl?env=production&plat=windows&download=true&managedInstaller=true&arch=x64' -OutFile 'c:\temp\Teams.msi'
 write-host "Download Done"(Get-Date)
-write-host "Installing Datadog"(Get-Date)
-#msiexec /i 'c:\temp\teams.msi' /l*v 'C:\temp\teams-install.log' ALLUSER=1 ALLUSERS=1
-Start-Process -Wait msiexec -ArgumentList '/qn /i c:\temp\teams.msi' ALLUSER=1 ALLUSERS=1
-write-host "Waiting the 120 seconds"(Get-Date)
-Start-Sleep -Seconds 120
-write-host "Datadog Done"(Get-Date)
+write-host "Installing Teams"(Get-Date)
+Invoke-Expression -Command 'msiexec /i C:\temp\Teams.msi /quiet /l*v C:\temp\teamsinstall.log ALLUSER=1'
+write-host "Waiting the 30 seconds"(Get-Date)
+Start-Sleep -Seconds 30
+write-host "Teams Done"(Get-Date)
 Stop-Transcript
